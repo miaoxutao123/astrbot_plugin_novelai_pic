@@ -5,8 +5,8 @@ from astrbot.api.message_components import Node, Plain, Image, Video, Nodes
 from astrbot.api.event import filter, AstrMessageEvent
 from astrbot.api import logger
 import astrbot.api.message_components as Comp
-from utils.genpic import generate_image
-@register("nai_picgen", "喵喵", "一个简单的使用nai来绘图的插件", "1.0.0")
+from .utils.genpic import generate_image
+@register("nai_picgen", "喵喵", "一个简单的使用nai来绘图的插件", "1.0.1")
 class MyPlugin(Star):
     def __init__(self, context: Context, config: dict):
         super().__init__(context)
@@ -27,7 +27,7 @@ class MyPlugin(Star):
             generated_files = await generate_image(
                 prompt=prompt,
                 api_key = apikey,
-                output_directory = "data/plugins/astrbot_plugin_novelai_pic/pic_gen",
+                save_path = "data/plugins/astrbot_plugin_novelai_pic/pic_gen",
                 model = input_model,
                 width = width,  
                 height = height,
