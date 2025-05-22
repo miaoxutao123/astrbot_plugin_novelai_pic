@@ -1,0 +1,9 @@
+{
+    "api_key": {
+        "description": "apikey",
+        "type": "string",
+        "hint": "请前往novelai中生成api_key",
+        "default": "your apikey",
+        "obvious_hint": true
+    }
+}

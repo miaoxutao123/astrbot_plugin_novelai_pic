@@ -1,9 +1,33 @@
-# helloworld
+# NovelAI Image Generator Plugin
 
-AstrBot 插件模板
+这是一个用于通过 NovelAI API 生成图像的 AstrBot 插件。
 
-A template plugin for AstrBot plugin feature
+## 功能
 
-# 支持
+- 使用 NovelAI API 生成图像。
+- 支持自定义生成参数（如分辨率、步数、缩放比例等）。
+- 异步实现，支持高效的网络请求。
+- 自动保存生成的图像到指定路径，并返回保存路径。
 
-[帮助文档](https://astrbot.app)
+## 安装
+
+1. 确保您已安装 AstrBot 并启用了插件功能。
+2. 将此插件放置到 AstrBot 的插件目录中。
+
+## 使用方法
+
+/nai_picgen 一只奶牛猫 nai-diffusion-4-full 512 512 50 12.0
+
+参数说明
+| 参数名       | 类型   | 默认值               | 描述                     |
+|--------------|--------|----------------------|--------------------------|
+| `prompt`     | `str`  | 无                   | 图像生成的文本提示。     |
+| `model`      | `str`  | `"nai-diffusion-4-full"` | 使用的图像生成模型。 |
+| `width`      | `int`  | `512`                | 图像宽度（像素）。       |
+| `height`     | `int`  | `512`                | 图像高度（像素）。       |
+| `steps`      | `int`  | `50`                 | 图像生成的步数。         |
+| `scale`      | `float`| `12.0`               | 图像生成的缩放比例。     |
+
+注意事项
+1. 请确保已正确配置好您的 NovelAI API 密钥。
+2. 请确保您的账户有足够的 Anlas 余额。
