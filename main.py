@@ -6,12 +6,12 @@ from astrbot.api.event import filter, AstrMessageEvent
 from astrbot.api import logger
 import astrbot.api.message_components as Comp
 from .utils.genpic import generate_image
-@register("nai_picgen", "喵喵", "一个简单的使用nai来绘图的插件", "1.0.1")
+@register("nai_picgen", "喵喵", "一个简单的使用nai来绘图的插件", "1.0.2")
 class MyPlugin(Star):
     def __init__(self, context: Context, config: dict):
         super().__init__(context)
         self.apikey = config.get("apikey")
-
+        self.preset = config.get("preset")
     async def initialize(self):
         """可选择实现异步的插件初始化方法，当实例化该插件类之后会自动调用该方法。"""
         logger.info("插件初始化完成。")
@@ -19,13 +19,15 @@ class MyPlugin(Star):
     @filter.command("nai_picgen")
     async def nai_picgen(self, event: AstrMessageEvent, prompt: str, input_model: str = "nai-diffusion-4-full",width: int = 512, height: int = 512 , steps: int = 50, scale: float = 12.0):
         apikey = self.apikey
+        preset = self.preset
+
         if not prompt:
             yield event.plain_result("请提供提示词！例如：/nai_picgen 一个美丽的森林")
             return
 
         try:
             generated_files = await generate_image(
-                prompt=prompt,
+                prompt=preset+prompt,
                 api_key = apikey,
                 save_path = "data/plugins/astrbot_plugin_novelai_pic/pic_gen",
                 model = input_model,

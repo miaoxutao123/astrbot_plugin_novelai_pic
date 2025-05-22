@@ -5,5 +5,12 @@
         "hint": "请前往novelai中生成api_key",
         "default": "your apikey",
         "obvious_hint": true
+    },
+    "preset": {
+        "description": "preset",
+        "type": "string",
+        "hint": "填写你的预设",
+        "default": "your preset",
+        "obvious_hint": true
     }
 }
