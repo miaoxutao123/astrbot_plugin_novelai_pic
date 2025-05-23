@@ -27,13 +27,13 @@
     },
     "width": {
         "description": "width",
-        "type": "integer",
+        "type": "int",
         "hint": "图片宽度，范围512-2048",
         "default": 512
     },
     "height": {
         "description": "height",
-        "type": "integer",
+        "type": "int",
         "hint": "图片高度，范围512-2048",
         "default": 512
     }
