@@ -12,5 +12,29 @@
         "hint": "填写你的预设",
         "default": "your preset",
         "obvious_hint": true
+    },
+    "proxy": {
+        "description": "proxy",
+        "type": "string",
+        "hint": "如果出现网络相关问题，填写你的代理地址",
+        "default": "none"
+    },
+    "model": {
+        "description": "model",
+        "type": "string",
+        "hint": "nai-diffusion-3 (NovelAI Diffusion 3),\n nai-diffusion-3-inpainting (NovelAI Diffusion 3 Inpainting),\n nai-diffusion-4 (NovelAI Diffusion 4),\n nai-diffusion-4-inpainting (NovelAI Diffusion 4 Inpainting),\n nai-diffusion-4-5 (NovelAI Diffusion 4.5),\n nai-diffusion-4-5-inpainting (NovelAI Diffusion 4.5 Inpainting),\n nai-diffusion-4-5-curated (NovelAI Diffusion 4.5 Curated),\n nai-diffusion-4-5-curated-inpainting (NovelAI Diffusion 4.5 Curated Inpainting)",
+        "default": "nai-diffusion-4-5-curated"
+    },
+    "width": {
+        "description": "width",
+        "type": "integer",
+        "hint": "图片宽度，范围512-2048",
+        "default": 512
+    },
+    "height": {
+        "description": "height",
+        "type": "integer",
+        "hint": "图片高度，范围512-2048",
+        "default": 512
     }
 }
